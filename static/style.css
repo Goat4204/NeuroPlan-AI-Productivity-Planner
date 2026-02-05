@@ -1,6 +1,5 @@
-/* ----------------------------
-GLOBAL STYLING
----------------------------- */
+
+/* GLOBAL STYLING */
 
 body {
     font-family: Arial, sans-serif;
@@ -10,9 +9,8 @@ body {
 }
 
 
-/* ----------------------------
-MAIN CONTAINER
----------------------------- */
+/* MAIN CONTAINER */
+
 
 .container {
     width: 80%;
@@ -25,9 +23,9 @@ h1 {
 }
 
 
-/* ----------------------------
-CARD UI
----------------------------- */
+
+/* CARD UI */
+
 
 .card {
     background: white;
@@ -41,10 +39,7 @@ CARD UI
     text-align: center;
 }
 
-
-/* ----------------------------
-FORM STYLING
----------------------------- */
+/* FORM STYLING */
 
 form input, form select {
     padding: 10px;
@@ -66,9 +61,7 @@ button:hover {
 }
 
 
-/* ----------------------------
-TABLE STYLING
----------------------------- */
+/* TABLE STYLING */
 
 table {
     width: 100%;
@@ -86,9 +79,7 @@ th {
 }
 
 
-/* ----------------------------
-PRIORITY COLORS
----------------------------- */
+/* PRIORITY COLORS */
 
 .priority-low {
     color: green;
@@ -106,9 +97,7 @@ PRIORITY COLORS
 }
 
 
-/* ----------------------------
-DELETE BUTTON
----------------------------- */
+/* DELETE BUTTON */
 
 .delete-btn {
     color: white;
@@ -123,9 +112,7 @@ DELETE BUTTON
 }
 
 
-/* ----------------------------
-PLAN BUTTON
----------------------------- */
+/* PLAN BUTTON */
 
 .plan-btn {
     font-size: 18px;
@@ -133,9 +120,7 @@ PLAN BUTTON
 }
 
 
-/* ----------------------------
-AI OUTPUT BOX
----------------------------- */
+/* AI OUTPUT BOX */
 
 
 .ai-output {

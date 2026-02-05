@@ -6,25 +6,22 @@ import google.generativeai as genai
 
 app = Flask(__name__)
 
-# ----------------------------
-# GEMINI SETUP
-# ----------------------------
+
+# Ai intrigration (Google gemini)
+
 genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 
 model = genai.GenerativeModel("gemini-2.5-flash")
 
-# ----------------------------
 # DATABASE CONNECTION
-# ----------------------------
+
 def get_db_connection():
     conn = sqlite3.connect('database.db')
     conn.row_factory = sqlite3.Row
     return conn
 
-
-# ----------------------------
 # DATABASE INIT
-# ----------------------------
+
 def init_db():
     conn = get_db_connection()
     cursor = conn.cursor()
@@ -44,10 +41,8 @@ def init_db():
 
 init_db()
 
+# AI function (Prompting Ai to take task from database and run the follwoing prompt on it)
 
-# =====================================================
-# AI FUNCTION (Gemini)
-# =====================================================
 def generate_ai_plan(tasks):
 
     task_text = ""
@@ -99,9 +94,9 @@ Tasks:
         return f"AI Planner temporarily unavailable: {str(e)}"
 
 
-# =====================================================
+
 # HOME ROUTE
-# =====================================================
+
 @app.route("/")
 def home():
 
@@ -112,9 +107,8 @@ def home():
     return render_template("index.html", tasks=tasks)
 
 
-# =====================================================
 # ADD TASK
-# =====================================================
+
 @app.route("/add_task", methods=["POST"])
 def add_task():
 
@@ -148,10 +142,8 @@ def delete_task(task_id):
 
     return redirect("/")
 
-
-# =====================================================
 # GENERATE AI PLAN
-# =====================================================
+
 @app.route("/generate_plan", methods=["POST"])
 def generate_plan():
 
