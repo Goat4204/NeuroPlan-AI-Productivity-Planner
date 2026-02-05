@@ -1,0 +1,149 @@
+/* ----------------------------
+GLOBAL STYLING
+---------------------------- */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f9;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* ----------------------------
+MAIN CONTAINER
+---------------------------- */
+
+.container {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+
+/* ----------------------------
+CARD UI
+---------------------------- */
+
+.card {
+    background: white;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.center {
+    text-align: center;
+}
+
+
+/* ----------------------------
+FORM STYLING
+---------------------------- */
+
+form input, form select {
+    padding: 10px;
+    margin: 5px;
+    width: 200px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+
+/* ----------------------------
+TABLE STYLING
+---------------------------- */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+
+/* ----------------------------
+PRIORITY COLORS
+---------------------------- */
+
+.priority-low {
+    color: green;
+    font-weight: bold;
+}
+
+.priority-medium {
+    color: orange;
+    font-weight: bold;
+}
+
+.priority-high {
+    color: red;
+    font-weight: bold;
+}
+
+
+/* ----------------------------
+DELETE BUTTON
+---------------------------- */
+
+.delete-btn {
+    color: white;
+    background-color: red;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.delete-btn:hover {
+    background-color: darkred;
+}
+
+
+/* ----------------------------
+PLAN BUTTON
+---------------------------- */
+
+.plan-btn {
+    font-size: 18px;
+    padding: 12px 25px;
+}
+
+
+/* ----------------------------
+AI OUTPUT BOX
+---------------------------- */
+
+
+.ai-output {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    white-space: pre-line;
+    line-height: 1.8;
+    font-family: monospace;
+}
+

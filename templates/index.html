@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>NeuroPlan - AI Productivity Planner</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>🧠 NeuroPlan</h1>
+
+    <!-- ========================= -->
+    <!-- TASK INPUT FORM -->
+    <!-- ========================= -->
+    <div class="card">
+
+        <h2>Add New Task</h2>
+
+        <form action="/add_task" method="POST">
+
+            <input type="text" name="task_name" placeholder="Task Name" required>
+
+            <select name="priority" required>
+                <option value="">Select Priority</option>
+                <option value="Low">Low</option>
+                <option value="Medium">Medium</option>
+                <option value="High">High</option>
+            </select>
+
+            <input type="number" name="estimated_time" placeholder="Estimated Time (minutes)" required>
+
+            <select name="energy_mode" required>
+                <option value="">Energy Level</option>
+                <option value="Low">Low</option>
+                <option value="Normal">Normal</option>
+                <option value="High">High</option>
+            </select>
+
+            <button type="submit">Add Task</button>
+
+        </form>
+
+    </div>
+
+
+    <!-- ========================= -->
+    <!-- TASK LIST -->
+    <!-- ========================= -->
+    <div class="card">
+
+        <h2>Your Tasks</h2>
+
+        <table>
+            <tr>
+                <th>Task</th>
+                <th>Priority</th>
+                <th>Time</th>
+                <th>Energy</th>
+                <th>Action</th>
+            </tr>
+
+            {% for task in tasks %}
+            <tr>
+
+                <td>{{ task.task_name }}</td>
+
+                <td class="priority-{{ task.priority | lower }}">
+                    {{ task.priority }}
+                </td>
+
+                <td>{{ task.estimated_time }} min</td>
+
+                <td>{{ task.energy_mode }}</td>
+
+                <td>
+                    <a href="/delete_task/{{ task.id }}" class="delete-btn">Delete</a>
+                </td>
+
+            </tr>
+            {% endfor %}
+
+        </table>
+
+    </div>
+
+
+    <!-- ========================= -->
+    <!-- PLAN BUTTON -->
+    <!-- ========================= -->
+    <div class="card center">
+
+        <form action="/generate_plan" method="POST">
+            <button class="plan-btn">✨ Plan My Day</button>
+        </form>
+
+    </div>
+
+
+    <!-- ========================= -->
+    <!-- AI OUTPUT SECTION -->
+    <!-- ========================= -->
+    <div class="card">
+
+        <h2>AI Daily Plan</h2>
+
+        <div class="ai-output">
+            {{ ai_plan if ai_plan else "Your AI generated schedule will appear here." }}
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
